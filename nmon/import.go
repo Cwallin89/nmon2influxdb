@@ -21,6 +21,7 @@ import (
 )
 
 var hostRegexp = regexp.MustCompile(`^AAA.host.(\S+)`)
+var runnameRegexp = regexp.MustCompile(`^AAA.runname.(\S+)`)
 var serialRegexp = regexp.MustCompile(`^AAA.SerialNumber.(\S+)`)
 var osRegexp = regexp.MustCompile(`^AAA.*(Linux|AIX)`)
 var timeRegexp = regexp.MustCompile(`^ZZZZ.(T\d+).(.*)$`)
