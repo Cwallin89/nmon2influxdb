@@ -135,6 +135,12 @@ func InitNmon(config *nmon2influxdblib.Config, nmonFile nmon2influxdblib.File) (
 			nmon.Hostname = strings.ToLower(matched[1])
 			continue
 		}
+		
+		if runnameRegexp.MatchString(line) {
+			matched := runnameRegexp.FindStringSubmatch(line)
+			nmon.Runname = strings.ToLower(matched[1])
+			continue
+		}
 
 		if serialRegexp.MatchString(line) {
 			matched := serialRegexp.FindStringSubmatch(line)
