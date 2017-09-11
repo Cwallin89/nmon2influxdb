@@ -20,6 +20,7 @@ import (
 // Nmon structure used to manage nmon files
 type Nmon struct {
 	Hostname    string
+	Runname	    string
 	Serial      string
 	OS          string
 	TimeStamps  map[string]string
