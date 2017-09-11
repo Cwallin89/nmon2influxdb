@@ -156,7 +156,7 @@ func Import(c *cli.Context) {
 						continue
 					}
 					column := nmon.DataSeries[name].Columns[i]
-					tags := map[string]string{"host": nmon.Hostname, "name": column}
+					tags := map[string]string{"Runname": nmon.Runname, "name": column}
 
 					// try to convert string to integer
 					converted, parseErr := strconv.ParseFloat(value, 64)
@@ -238,7 +238,7 @@ func Import(c *cli.Context) {
 						wlmclass = elems[14]
 					}
 
-					tags := map[string]string{"host": nmon.Hostname, "name": column, "pid": elems[1], "command": elems[13], "wlm": wlmclass}
+					tags := map[string]string{"Runname": nmon.Runname, "name": column, "pid": elems[1], "command": elems[13], "wlm": wlmclass}
 
 					if len(nmon.Serial) > 0 {
 						tags["serial"] = nmon.Serial
